@@ -38,7 +38,7 @@ fromFullNote :: FullNote -> Int
 fromFullNote (FullNote n m) = fromEnum n + m * 12
 
 fromBeat :: Beat -> Int
-fromBeat b = 24 `div` (2 ^ fromEnum b :: Int)
+fromBeat b = 24 `div` (2 ^ fromEnum b)
 
 createScale :: [Step] -> FullNote -> Scale
 createScale [] n = [n]
