@@ -47,6 +47,7 @@ createScale (step:steps) n = [n] ++ createScale steps (adjustNoteByStep n step)
 majorScale = createScale [Whole, Whole, Half, Whole, Whole, Whole, Half]
 minorScale = createScale [Whole, Half, Whole, Whole, Half, Whole, Half]
 
+measureToTrack :: Measure -> [(Ticks, Message)]
 measureToTrack m = innerConvert m 0 where
     innerConvert []     t = [(t, TrackEnd)]
     innerConvert (x:xs) t = [(t, NoteOn 2 note 80)]
