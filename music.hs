@@ -54,8 +54,8 @@ measureToTrack m = innerConvert m 0 where
                               ++ [(beat, NoteOff 2 note 0)]
                               ++ innerConvert xs beat
         where
-        beat = (fromBeat (fst x))
-        note = (fromFullNote (snd x) + 60)
+        beat = fromBeat (fst x)
+        note = fromFullNote (snd x) + 60
 
 pieceToMidi m = Midi {
             fileType = MultiTrack,
